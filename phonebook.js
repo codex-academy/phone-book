@@ -2,7 +2,9 @@ function PhoneBook() {
     const userList = []
     const addNumber = (name, number) => {
         if(name && number) {
-            userList.push({ name, number})
+            if(getNumber(name) == null) {
+                userList.push({ name, number})
+            }
         }
     }
     
@@ -10,7 +12,7 @@ function PhoneBook() {
         const user = userList.find((userObj) => {
             return userObj.name == name;
         })
-        return user.number
+        return (user) ? user.number : null;
     }
 
     const getNumbers = () => {

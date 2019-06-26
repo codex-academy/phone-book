@@ -8,6 +8,7 @@ describe("The phonebook", function(){
 
 	it("should not add duplicate users", function() {
 		const phoneBook = PhoneBook();
+		const userList = phoneBook.getNumbers();
 		phoneBook.addNumber("Linda", "082 123 4500");
 		phoneBook.addNumber("Linda", "082 123 4522");
 		
